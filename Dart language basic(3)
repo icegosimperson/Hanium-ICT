@@ -1,0 +1,77 @@
+1. Late Variables
+
+void main() {
+  late final String name; // late는 초기 데이터 없이 변수를 선언할 수 있게 해줌
+  // do something, go to api
+  name = 'nico'; // 데이터 선언 
+  print('name');  
+}
+
+2. List in dart 
+
+void main() {
+  // list in dart 장점 : collection if와 collection for 지원
+  var giveMeFive= true;
+  var numbers = [
+    1,
+    2,
+    3,
+    4,
+    if(giveMeFive) 5, // giveMeFive가 true라면 List에 5를 추가하도록
+  ];
+  print(numbers);
+}
+
+
+// if(giveMeFive) 5, 와 동일한 의미
+if (giveMeFive){
+  numbers.add(5);
+}
+
+
+
+3. String Interpolation : text에 변수를 추가하는 방법 ($ 기호 활용)
+
+void main() {
+  var name = 'gosim';
+  var age = 20;
+  var greeting = "Hello every one, my name is ${name+'ee'} and I'm ${age+5}";
+  print(greeting);
+}
+${계산할 내용} 
+ 
+4. collection if
+
+void main() {
+  var student = ['JH', 'SM', 'TH'];
+  var professor = [
+    'YOOHAM', 
+    'JG',
+    'SY_Father',
+     for (var ice in student) "♨ $ice", 
+  ];
+  print(professor);
+}
+
+for (var ice in student){
+  professor.add()
+}
+=  for (var ice in student) "$ice", 
+
+
+
+String sayHello({ //sayHello가 호출될 때 name, age, country를 가져야된다는 걸 함수가 앎게됨
+  required String name,
+  required int age,
+  required String country,
+}) {
+  return "Hello $name, you are $age, and you come from $country";
+}
+
+void main() {
+  print(sayHello(
+    age: 300, 
+    country: 'Korea',
+    name: 'gosime',
+  ));
+}
